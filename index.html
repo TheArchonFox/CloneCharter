@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Clone Charter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
+</head>
+
+<body>
+    <p>
+        Selecione sua música: <input id="arquivo" type="file" />
+    </p>
+    <br/>
+    <audio id="audio" src="" controls ></audio>
+    <br/>
+    <br/>
+    <button id="btn-green" style="background-color: green; height: 50px; width: 35px; border-bottom-left-radius: 45%; border-bottom-right-radius: 45%;" ></button>
+    <button id="btn-red" style="background-color: red; height: 50px; width: 35px; border-bottom-left-radius: 45%; border-bottom-right-radius: 45%;" ></button>
+    <button id="btn-yellow" style="background-color: yellow; height: 50px; width: 35px; border-bottom-left-radius: 45%; border-bottom-right-radius: 45%;" ></button>
+    <button id="btn-blue" style="background-color: blue; height: 50px; width: 35px; border-bottom-left-radius: 45%; border-bottom-right-radius: 45%;" ></button>
+    <button id="btn-orange" style="background-color: orange; height: 50px; width: 35px; border-bottom-left-radius: 45%; border-bottom-right-radius: 45%; " ></button>
+</body>
+
+<script type="text/javascript">
+    $("#arquivo").on("change", function (e) {       
+        $("#audio").attr("src", URL.createObjectURL(e.target.files[0]));
+    });
+    
+    setInterval(function() {
+        console.log("valor: ", $("#arquivo").val());
+    },
+    3000);
+</script>
+
+</html>
