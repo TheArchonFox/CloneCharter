@@ -1,13 +1,18 @@
-$("#arquivo").on("change", function (e) {       
-    $("#audio").attr("src", URL.createObjectURL(e.target.files[0]));
-    $("#btn-play").toggleClass("enabled");
-    document.getElementById('txt-songtitle').innerHTML = "Song: " + (e.target.files[0].name).replace(/\.[^/.]+$/, "");
-});
+const inputSongFile = document.getElementById("input-songfile");
+const audioSong = document.getElementById("audio-song");
+const btnPlay = document.getElementById("btn-play");
+const txtSongTitle = document.getElementById("txt-songtitle");
 
-function _upload_song(){
-    document.getElementById('arquivo').click();
+function onChangeArquivo(){
+    audioSong.setAttribute("src", URL.createObjectURL(inputSongFile.files[0]));
+    btnPlay.toggleAttribute("enabled", true);
+    txtSongTitle.innerHTML = "Song: " + (inputSongFile.files[0].name).replace(/\.[^/.]+$/, "");
 }
 
-function _play_song(){
-    document.getElementById('audio').play();
+function onClickUpload(){
+    inputSongFile.click();
+}
+
+function onClickPlay(){
+    audioSong.play();
 }
