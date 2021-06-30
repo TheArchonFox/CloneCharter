@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Clone Charter</title>
+    <link href="..\src\styles\main.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="div-btns">
+        <button id="btn-upload" class="btn-main" onclick="_upload_song()">New Song</i>
+        <button id="btn-play" class="btn-main2" onclick="_play_song()">Start Charting</i>
+    </div>
+    <text id="txt-songtitle">Song:</text>
+    <input id="arquivo" type="file" style="display:none"/>
+    <audio id="audio" src=""></audio>
+    <div id="div-fret">
+        <button id="btn-green"  class="btn-fret"></button>
+        </br>
+        <button id="btn-red"    class="btn-fret"></button>
+        </br>
+        <button id="btn-yellow" class="btn-fret"></button>
+        </br>
+        <button id="btn-blue"   class="btn-fret"></button>
+        </br>
+        <button id="btn-orange" class="btn-fret"></button>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $("#arquivo").on("change", function (e) {       
+        $("#audio").attr("src", URL.createObjectURL(e.target.files[0]));
+        $("#btn-play").toggleClass("enabled");
+        document.getElementById('txt-songtitle').innerHTML = "Song: " + (e.target.files[0].name).replace(/\.[^/.]+$/, "");
+    });
+
+    function _upload_song(){
+        document.getElementById('arquivo').click();
+    }
+
+    function _play_song(){
+        document.getElementById('audio').play();
+    }
+</script>
+
+</html>

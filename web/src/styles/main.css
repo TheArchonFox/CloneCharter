@@ -1,0 +1,142 @@
+body 
+{
+    background:#333;
+}
+
+text
+{
+    color:#fff;
+    font-family:'Segoe UI';
+}
+
+#txt-songtitle
+{
+    font-size: 42px;
+}
+
+.btn-main
+{
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Segoe UI';
+  font-size: 24px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-main2
+{
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Segoe UI';
+  font-size: 24px;
+  margin: 4px 2px;
+  transition-duration: 100s;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-main2.enabled
+{
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family:'Segoe UI';
+    font-size: 24px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#btn-upload
+{
+    background-color: black; 
+    color: white; 
+    border: 2px solid #999;
+}
+
+#btn-upload:hover
+{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+#btn-play
+{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #999;
+}
+
+#btn-play:hover
+{
+    background-color: #050;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-fret
+{
+    height: 35px;
+    width: 50px;
+    border-top-right-radius: 45%;
+    border-bottom-right-radius: 45%;
+    display: inline-block;
+    transition-duration: 0.2s;
+}
+
+#btn-green
+{
+    background-color: green;
+}
+
+#btn-green:active {
+  background-color: #c0ffc0;
+}
+
+#btn-red
+{
+    background-color: red;
+}
+
+#btn-red:active {
+  background-color: #ffc0c0;
+}
+
+#btn-yellow
+{
+    background-color: yellow;
+}
+
+#btn-yellow:active {
+  background-color: #ddddc0;
+}
+
+#btn-blue
+{
+    background-color: blue;
+}
+
+#btn-blue:active {
+  background-color: #c0c0ff;
+}
+
+#btn-orange
+{
+    background-color: orange;
+}
+
+#btn-orange:active {
+  background-color: #ffe0c0;
+}
