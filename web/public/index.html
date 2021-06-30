@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Clone Charter</title>
+    <link href="..\src\styles\main.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>
+        <img src="https://www12.lunapic.com/editor/images/browse-blue.png" id="icon_upload" class="uploadbtn" onclick="_upload_song()"></i>
+        <input id="arquivo" type="file" style="display:none"/>
+    </p>
+    <br/>
+    <audio id="audio" src="" controls ></audio>
+    <br/>
+    <br/>
+    <button id="btn-green"  class="fretbtn"></button>
+    <button id="btn-red"    class="fretbtn"></button>
+    <button id="btn-yellow" class="fretbtn"></button>
+    <button id="btn-blue"   class="fretbtn"></button>
+    <button id="btn-orange" class="fretbtn"></button>
+</body>
+
+<script type="text/javascript">
+    $("#arquivo").on("change", function (e) {       
+        $("#audio").attr("src", URL.createObjectURL(e.target.files[0]));
+    });
+
+    function _upload_song(){
+        document.getElementById('arquivo').click();
+    }
+</script>
+
+</html>
