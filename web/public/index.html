@@ -8,28 +8,39 @@
 </head>
 
 <body>
-    <p>
-        <img src="images\upload-blue.png" id="icon_upload" class="uploadbtn" onclick="_upload_song()"></i>
-        <input id="arquivo" type="file" style="display:none"/>
-    </p>
-    <br/>
-    <audio id="audio" src="" controls ></audio>
-    <br/>
-    <br/>
-    <button id="btn-green"  class="fretbtn"></button>
-    <button id="btn-red"    class="fretbtn"></button>
-    <button id="btn-yellow" class="fretbtn"></button>
-    <button id="btn-blue"   class="fretbtn"></button>
-    <button id="btn-orange" class="fretbtn"></button>
+    <div id="div-btns">
+        <button id="btn-upload" class="btn-main" onclick="_upload_song()">New Song</i>
+        <button id="btn-play" class="btn-main2" onclick="_play_song()">Start Charting</i>
+    </div>
+    <text id="txt-songtitle">Song:</text>
+    <input id="arquivo" type="file" style="display:none"/>
+    <audio id="audio" src=""></audio>
+    <div id="div-fret">
+        <button id="btn-green"  class="btn-fret"></button>
+        </br>
+        <button id="btn-red"    class="btn-fret"></button>
+        </br>
+        <button id="btn-yellow" class="btn-fret"></button>
+        </br>
+        <button id="btn-blue"   class="btn-fret"></button>
+        </br>
+        <button id="btn-orange" class="btn-fret"></button>
+    </div>
 </body>
 
 <script type="text/javascript">
     $("#arquivo").on("change", function (e) {       
         $("#audio").attr("src", URL.createObjectURL(e.target.files[0]));
+        $("#btn-play").toggleClass("enabled");
+        document.getElementById('txt-songtitle').innerHTML = "Song: " + (e.target.files[0].name).replace(/\.[^/.]+$/, "");
     });
 
     function _upload_song(){
         document.getElementById('arquivo').click();
+    }
+
+    function _play_song(){
+        document.getElementById('audio').play();
     }
 </script>
 
